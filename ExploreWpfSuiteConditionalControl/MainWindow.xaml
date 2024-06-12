@@ -1,0 +1,25 @@
+﻿<Window x:Class="ExploreWpfSuiteConditionalControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ws="https://schemas.elecho.dev/wpfsuite"
+        xmlns:local="clr-namespace:ExploreWpfSuiteConditionalControl"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
+    
+    <Grid>
+        <ws:StackPanel Margin="28 12 28 28"
+                       Spacing="8">
+            <ws:Button Content="DoTask"
+                       Command="{Binding SomeTaskCommand}"/>
+
+            <ws:ProgressBar IsIndeterminate="True"
+                            Visibility="{Binding SomeTaskCommand.IsRunning}"/>
+        </ws:StackPanel>
+    </Grid>
+</Window>

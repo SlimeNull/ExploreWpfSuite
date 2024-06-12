@@ -1,0 +1,23 @@
+﻿<Window x:Class="LearnWpfSuiteTransition.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ws="https://schemas.elecho.dev/wpfsuite"
+        xmlns:local="clr-namespace:LearnWpfSuiteTransition"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="28 14 28 0">
+            <Button Content="SwitchImage"
+                    Click="Button_Click"/>
+
+            <ws:TransitioningContentControl Name="transitioningContentControl"
+                                            Margin="0 8 0 0">
+                <ws:TransitioningContentControl.Transition>
+                    <ws:SlideTransition/>
+                </ws:TransitioningContentControl.Transition>
+            </ws:TransitioningContentControl>
+        </StackPanel>
+    </Grid>
+</Window>
